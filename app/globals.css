@@ -18,3 +18,9 @@
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+.outline-text {
+  color: transparent;                /* Make fill transparent */
+  -webkit-text-stroke: 2px #4d3847; /* Stroke width and color */
+  text-stroke: 2px #4d3847;         /* Fallback for non-webkit browsers */
+}

@@ -52,6 +52,9 @@ const Navbar = () => {
             ))}
             <Link
               href="/contact"
+              style={{
+                filter: "drop-shadow(0px 16px 33px rgba(0, 0, 0, 0.3))",
+              }}
               className="hover:bg-red-800 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-gradient-to-r from-red-800 to-red-900 hover:brightness-110"
             >
               Contact Us
@@ -85,19 +88,28 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
             {/* Theme Toggle for Mobile */}
-            <button
-              onClick={() =>
+            <Switch
+              checked={resolvedTheme === "dark"}
+              onChange={() =>
                 setTheme(resolvedTheme === "dark" ? "light" : "dark")
               }
-              className="rounded-full p-2 bg-gray-200 dark:bg-gray-800 flex items-center justify-center"
-              aria-label="Toggle Dark Mode"
+              className={`${
+                resolvedTheme === "dark" ? "bg-gray-700" : "bg-gray-800"
+              } relative inline-flex h-8 w-16 items-center rounded-full transition-colors duration-300 focus:outline-none ml-4`}
             >
-              {resolvedTheme === "dark" ? (
-                <Sun size={18} className="text-yellow-500" />
-              ) : (
-                <Moon size={18} className="text-gray-700" />
-              )}
-            </button>
+              <span className="sr-only">Toggle theme</span>
+              <span className="absolute left-2">
+                <Sun size={14} className="text-white" />
+              </span>
+              <span className="absolute right-2">
+                <Moon size={14} className="text-white" />
+              </span>
+              <span
+                className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform duration-300 ${
+                  resolvedTheme === "dark" ? "translate-x-9" : "translate-x-1"
+                }`}
+              />
+            </Switch>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"

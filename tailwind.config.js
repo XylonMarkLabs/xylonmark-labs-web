@@ -8,6 +8,9 @@ module.exports = {
   darkMode: 'class', // Enable class-based dark mode
   theme: {
     extend: {
+      backgroundImage: {
+        'about-gradient': 'radial-gradient(circle at 30% 30%, #3a2231 60%, #181822 100%)',
+      },
       colors: {
         // You can customize your color palette here
         primary: {

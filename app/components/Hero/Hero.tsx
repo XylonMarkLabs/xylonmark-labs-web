@@ -38,7 +38,10 @@ const Hero = () => {
           branding, and ERP systems.
         </p>
         <div className="mt-5 max-w-lg mx-auto sm:flex sm:justify-center md:mt-8">
-          <div className="w-md">
+          <div className="w-md"
+           style={{
+            filter: "drop-shadow(0px 16px 33px rgba(0, 0, 0, 0.3))",
+           }}>
             <a
               href="/contact"
               className="flex items-center justify-center px-2.5 py-3 border border-transparent text-base font-medium rounded-4xl bg-gradient-to-r from-red-800 to-red-900 hover:brightness-110 text-white md:py-4 md:text-lg md:px-10"
